@@ -1,9 +1,11 @@
 class Poly{
-    constructor(value){
+    constructor({value}){
         value.position ? this.position = value.position : this.position = new THREE.Vector3(0, 0, 0);
         value.rotation ? this.rotation = value.rotation : this.rotation = 0;
         value.scale ? this.scale = value.scale : this.scale = new THREE.Vector3(1, 1, 0);
-        value.color ? this.color = value.color: this.color = 0xffffff;
+        value.color ? this.color = value.color : this.color = 0xffffff;
+        value.alpha ? this.alpha = value.alpha : this.alpha = "1";
+        value.name ? this.name = value.name : this.name = "";
     }
     get mPosition() { return this.position }
     get mScale() { return this.scale }
@@ -17,15 +19,15 @@ class Poly{
 }
 
 class Square extends Poly{
-    constructor(value){
-        super(value)
+    constructor({value}){
+        super({value})
     }
 
     create(){
         var geometry = new THREE.PlaneBufferGeometry( 2*this.scale.x, 2*this.scale.y, 0 );
         var material = new THREE.MeshBasicMaterial( {color: this.color, side: THREE.DoubleSide} );
         var plane = new THREE.Mesh( geometry, material );
-        plane.name = "Square"
+        this.name === "" ? this.name = "Square": circle.name = this.name;
         plane.rotation.z = this.rotation;
         plane.position.set(this.position.x, this.position.y, this.position.z)
         return plane
@@ -33,15 +35,15 @@ class Square extends Poly{
 }
 
 class Circle extends Poly{
-    constructor(value){
-        super(value)
+    constructor({value}){
+        super({value})
     }
 
     create(){
         var geometry = new THREE.CircleBufferGeometry( 1*this.scale.x, 32 );
         var material = new THREE.MeshBasicMaterial( {color: this.color, side: THREE.DoubleSide} );
         var circle = new THREE.Mesh( geometry, material );
-        circle.name = "Circle";
+        this.name === "" ? this.name = "Circle": circle.name = this.name;
         circle.rotation.z = this.rotation;
         circle.position.set(this.position.x, this.position.y, this.position.z)
         return circle
@@ -49,8 +51,8 @@ class Circle extends Poly{
 }
 
 class Triangle extends Poly{
-    constructor(value){
-        super(value)
+    constructor({value}){
+        super({value})
     }
 
     create(){
@@ -72,7 +74,7 @@ class Triangle extends Poly{
 
         var material = new THREE.MeshBasicMaterial( {color: this.color, side: THREE.DoubleSide} );
         var tri = new THREE.Mesh( geometry, material )
-        tri.name = "Triangle";
+        this.name === "" ? this.name = "Triangle": circle.name = this.name;
         tri.rotation.z = this.rotation;
         tri.position.set(this.position.x, this.position.y, this.position.z)
         return tri
