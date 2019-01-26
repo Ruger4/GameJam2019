@@ -14,37 +14,35 @@ function init() {
     var aspect = window.innerWidth / window.innerHeight;
     camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 100 );
     camera.lookAt( scene.position );
-    camera.position.z = 1;
+    camera.position.z = 10;
     camera.updateMatrixWorld();
 
     var light = new THREE.DirectionalLight( 0xffffff, 1 );
     light.position.set( 1, 1, 1 ).normalize();
     scene.add( light );
 
-    //scene.add( new Triangle({position: new THREE.Vector3(0,3,0), color: 0xffff00}).create() );
-    //scene.add( new Circle({position: new THREE.Vector3(-3,0,-1), color: 0x7E1D1D}).create() );
-    //scene.add( new Square({position: new THREE.Vector3(3,0,-2), rotation: -0.279531933, color: 0x0000FF}).create() );
+    scene.add( new Triangle({position: new THREE.Vector3(0,0,1), color: 0x0000FF}).create() );
+    scene.add( new Circle({position: new THREE.Vector3(-1,0,0), color: 0x0000FF}).create() );
+    scene.add( new Square({position: new THREE.Vector3(1,0,-1), rotation: -0.279531933, color: 0x0000FF}).create() );
 
-    scene.add( new Circle({position: new THREE.Vector3(0.065,0.402,1), rotation: 0, scale: new THREE.Vector3(1,1,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(-0.019,0.255,0), rotation: -16.016, scale: new THREE.Vector3(247.943,156.265,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(-0.038,0.084,0), rotation: -4.943, scale: new THREE.Vector3(247.943,146.442,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Triangle({position: new THREE.Vector3(-0.051,-0.044,0), rotation: -92.266, scale: new THREE.Vector3(81.014,1,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(-0.134,0.267,2), rotation: -58.837, scale: new THREE.Vector3(183.106,90.18,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(-0.014,0.198,2), rotation: 27.653, scale: new THREE.Vector3(183.106,90.18,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Circle({position: new THREE.Vector3(0.1,0.249,2), rotation: 0, scale: new THREE.Vector3(53.133,1,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(0.141,0.225,-2), rotation: -64.977, scale: new THREE.Vector3(183.106,90.18,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(0.181,0.092,-1), rotation: -137.78, scale: new THREE.Vector3(117.094,90.18,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Circle({position: new THREE.Vector3(0.108,0.027,2), rotation: 0, scale: new THREE.Vector3(53.133,1,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(-0.168,-0.138,1), rotation: -124.659, scale: new THREE.Vector3(181.216,130.144,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(-0.19,-0.322,0), rotation: -78.54, scale: new THREE.Vector3(219.318,130.144,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(-0.184,-0.481,-2), rotation: -65.936, scale: new THREE.Vector3(83.77,168.041,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(0.041,-0.155,1), rotation: -75.332, scale: new THREE.Vector3(181.216,130.144,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(0.134,-0.344,0), rotation: -57.957, scale: new THREE.Vector3(219.318,130.144,1), color: 0x3D5FC6, alpha: 1}).create())
-    scene.add( new Square({position: new THREE.Vector3(0.217,-0.485,-2), rotation: -86.041, scale: new THREE.Vector3(83.77,130.144,1), color: 0x3D5FC6, alpha: 1}).create())
-
-    /*for(var key in keyfames){
-        scene.add( keyfames[key] )
-    }*/
+    scene.add( new Circle({position: new THREE.Vector3(0.393,2.442,1).multiply(pr), rotation: 0, scale: new THREE.Vector3(0.5,0.5,0.5), color: 0x3D5FC6, alpha: 1}).create())
+    
+    scene.add( new Circle({position: new THREE.Vector3(0.393,2.442,1).multiply(pr), rotation: 0, scale: new THREE.Vector3(0.5,0.5,0.5), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(-0.079,1.736,0).multiply(pr), rotation: -11.592, scale: new THREE.Vector3(148.373,89.891,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(-0.189,0.731,0).multiply(pr), rotation: -3.906, scale: new THREE.Vector3(135.514,87.69,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Triangle({position: new THREE.Vector3(-0.301,-0.076,0).multiply(pr), rotation: 25.419, scale: new THREE.Vector3(126.122,1,1).multiply(tr2), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(-0.854,1.786,2).multiply(pr), rotation: -60.404, scale: new THREE.Vector3(94.866,60.056,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(-0.251,1.231,1).multiply(pr), rotation: 26.253, scale: new THREE.Vector3(98.26,49.124,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Circle({position: new THREE.Vector3(0.456,1.536,1).multiply(pr), rotation: 0, scale: new THREE.Vector3(61.03,1,1).multiply(tr2), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(0.847,1.44,-2).multiply(pr), rotation: -66.853, scale: new THREE.Vector3(116.057,60.056,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(1.057,0.594,-1).multiply(pr), rotation: 43.682, scale: new THREE.Vector3(72.151,49.124,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Circle({position: new THREE.Vector3(0.672,0.17,1).multiply(pr), rotation: 0, scale: new THREE.Vector3(61.03,1,1).multiply(tr2), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(-0.954,-0.73,-1).multiply(pr), rotation: -122.368, scale: new THREE.Vector3(146.224,73.243,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(-1.235,-1.98,-2).multiply(pr), rotation: -76.754, scale: new THREE.Vector3(140.776,70.515,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(-1.124,-2.949,-1).multiply(pr), rotation: -71.787, scale: new THREE.Vector3(47.482,104.101,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(0.22,-0.796,1).multiply(pr), rotation: -75.159, scale: new THREE.Vector3(146.224,73.243,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(0.794,-2.053,0).multiply(pr), rotation: -58.84, scale: new THREE.Vector3(140.776,70.515,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
+    scene.add( new Square({position: new THREE.Vector3(1.231,-2.952,1).multiply(pr), rotation: -88.48, scale: new THREE.Vector3(47.482,104.101,1).multiply(tr), color: 0x3D5FC6, alpha: 1}).create())
 
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio( window.devicePixelRatio );

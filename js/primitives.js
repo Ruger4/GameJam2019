@@ -1,19 +1,16 @@
 class Poly{
     constructor(value){
         value.position ? this.position = value.position : this.position = new THREE.Vector3(0, 0, 0);
-        value.rotation ? this.rotation = Math.sin(value.rotation) : this.rotation = 0;
-        value.scale ? this.scale = value.scale.multiply(new THREE.Vector3(0.001,0.001,0.001)) : this.scale = new THREE.Vector3(1, 1, 0);
+        value.rotation ? this.rotation = value.rotation : this.rotation = 0;
+        value.scale ? this.scale = value.scale : this.scale = new THREE.Vector3(1, 1, 0);
         value.color ? this.color = new THREE.Color(value.color) : this.color = new THREE.Color(0xffffff);
         value.alpha ? this.alpha = value.alpha : this.alpha = "1";
         value.name ? this.name = value.name : this.name = "";
-    }
-    get mPosition() { return this.position }
-    get mScale() { return this.scale }
-    get mColor() { return this.color }
 
-    set mPosition(position) { this.position = position; }
-    set mScale(scale) { this.scale = scale; }
-    set mColor(color) { this.color = color; }
+        this.squareScalar = new THREE.Vector3(0.005, 0.005, 1);
+        this.triScalar = new THREE.Vector3(0.005, 1, 1);
+        this.posScalar = new THREE.Vector3(1,1,1);
+    }
 
     create(){ return }
 }
@@ -24,20 +21,23 @@ class Square extends Poly{
     }
 
     create(){
-        this.color = new THREE.Color(this.Color)
-        var col = new THREE.Color(this.position.z*15, this.position.z*15, this.position.z*15);
-        console.log(col)
-        if(this.position !== 0) col = this.position.z > 0 ? this.color += col : this.color -= col;
-
         var geometry = new THREE.PlaneBufferGeometry( 2*this.scale.x, 2*this.scale.y, 0 );
-        var material = new THREE.MeshBasicMaterial( {color: this.color, side: THREE.DoubleSide} );
+        var material = new THREE.MeshBasicMaterial( {color: this.color.addScalar(this.position.z*0.1), side: THREE.DoubleSide} );
         var plane = new THREE.Mesh( geometry, material );
         this.name === "" ? this.name = "Square": circle.name = this.name;
-        plane.rotation.z = this.rotation;
+        plane.rotation.z = this.rotation*3.14159265359/180;
         plane.position.set(this.position.x, this.position.y, this.position.z)
         return plane
     }
 }
+
+// function createCircle({ scale, color, position }) {
+//     var geometry = new THREE.CircleBufferGeometry( 1*scale.x, 32 );
+//     var material = new THREE.MeshBasicMaterial( {color: color.addScalar(position.z*0.1), side: THREE.DoubleSide} );
+//     var circle = new THREE.Mesh( geometry, material );
+//     circle.position.set(position.x, position.y, position.z)
+//     return circle
+// }
 
 class Circle extends Poly{
     constructor(value){
@@ -46,10 +46,9 @@ class Circle extends Poly{
 
     create(){
         var geometry = new THREE.CircleBufferGeometry( 1*this.scale.x, 32 );
-        var material = new THREE.MeshBasicMaterial( {color: this.color, side: THREE.DoubleSide} );
+        var material = new THREE.MeshBasicMaterial( {color: this.color.addScalar(this.position.z*0.1), side: THREE.DoubleSide} );
         var circle = new THREE.Mesh( geometry, material );
         this.name === "" ? this.name = "Circle": circle.name = this.name;
-        circle.rotation.z = this.rotation;
         circle.position.set(this.position.x, this.position.y, this.position.z)
         return circle
     }
@@ -77,10 +76,10 @@ class Triangle extends Poly{
         var face = new THREE.Face3( 0, 1, 2, new THREE.Vector3( 0, 1, 0 ) );
         geometry.faces.push( face )
 
-        var material = new THREE.MeshBasicMaterial( {color: this.color, side: THREE.DoubleSide} );
+        var material = new THREE.MeshBasicMaterial( {color: this.color.addScalar(this.position.z*0.1), side: THREE.DoubleSide} );
         var tri = new THREE.Mesh( geometry, material )
         this.name === "" ? this.name = "Triangle": circle.name = this.name;
-        tri.rotation.z = this.rotation;
+        tri.rotation.z = (this.rotation+30)*3.14159265359/180;
         tri.position.set(this.position.x, this.position.y, this.position.z)
         return tri
     }
