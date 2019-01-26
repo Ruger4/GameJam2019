@@ -1,9 +1,9 @@
 class Poly{
-    constructor({value}){
+    constructor(value){
         value.position ? this.position = value.position : this.position = new THREE.Vector3(0, 0, 0);
-        value.rotation ? this.rotation = value.rotation : this.rotation = 0;
-        value.scale ? this.scale = value.scale : this.scale = new THREE.Vector3(1, 1, 0);
-        value.color ? this.color = value.color : this.color = 0xffffff;
+        value.rotation ? this.rotation = Math.sin(value.rotation) : this.rotation = 0;
+        value.scale ? this.scale = value.scale.multiply(new THREE.Vector3(0.001,0.001,0.001)) : this.scale = new THREE.Vector3(1, 1, 0);
+        value.color ? this.color = new THREE.Color(value.color) : this.color = new THREE.Color(0xffffff);
         value.alpha ? this.alpha = value.alpha : this.alpha = "1";
         value.name ? this.name = value.name : this.name = "";
     }
@@ -19,11 +19,16 @@ class Poly{
 }
 
 class Square extends Poly{
-    constructor({value}){
-        super({value})
+    constructor(value){
+        super(value)
     }
 
     create(){
+        this.color = new THREE.Color(this.Color)
+        var col = new THREE.Color(this.position.z*15, this.position.z*15, this.position.z*15);
+        console.log(col)
+        if(this.position !== 0) col = this.position.z > 0 ? this.color += col : this.color -= col;
+
         var geometry = new THREE.PlaneBufferGeometry( 2*this.scale.x, 2*this.scale.y, 0 );
         var material = new THREE.MeshBasicMaterial( {color: this.color, side: THREE.DoubleSide} );
         var plane = new THREE.Mesh( geometry, material );
@@ -35,8 +40,8 @@ class Square extends Poly{
 }
 
 class Circle extends Poly{
-    constructor({value}){
-        super({value})
+    constructor(value){
+        super(value)
     }
 
     create(){
@@ -51,8 +56,8 @@ class Circle extends Poly{
 }
 
 class Triangle extends Poly{
-    constructor({value}){
-        super({value})
+    constructor(value){
+        super(value)
     }
 
     create(){

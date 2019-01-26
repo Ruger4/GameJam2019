@@ -1,5 +1,5 @@
 class Actor {
-    constructor({value}){
+    constructor(value){
         value.name ? this.name = value.name : this.name = "";
         value.position ? this.position = value.position : value.position = new THREE.Vector3(0, 0, 0);
         this.meshArray = {
@@ -24,7 +24,7 @@ class Actor {
 }
 
 class Protagonist extends Actor {
-    constructor({value}){
+    constructor(value){
         value.name ? this.name = value.name : this.name = "";
         value.position ? this.position = value.position : value.position = new THREE.Vector3(0, 0, 0);
         this.meshArray = {
