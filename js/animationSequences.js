@@ -1,7 +1,6 @@
 class AnimationSequence {
-    duration = 1000; // ms
-
     constructor(){
+        this.duration = 1000; // ms
         this.keyfames = [];
     }
 
