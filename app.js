@@ -1,6 +1,9 @@
 var container, camera, scene, raycaster, renderer;
 var frustumSize = 10;
 
+var protagonist = new Protagonist();
+var actors = [protagonist];
+
 init();
 animate();
 
@@ -21,11 +24,12 @@ function init() {
     light.position.set( 1, 1, 1 ).normalize();
     scene.add( light );
 
-    var protagonist = new Protagonist();
-
-    for(let key in protagonist.meshArray) {
-        const mesh = protagonist.meshArray[key];
-        scene.add(mesh);
+    for(let i in actors) {
+        const actor = actors[i];
+        for(let key in actor.meshArray) {
+            const mesh = actor.meshArray[key];
+            scene.add(mesh);
+        }
     }
 
     // scene.add( makeTriangle({position: new THREE.Vector3(0,0,1), color: 0x0000FF}) );
@@ -60,9 +64,12 @@ function init() {
 }
 function animate() {
     requestAnimationFrame( animate );
-
-
+    update();
     render();
+}
+function update() {
+    for(let i in actors)
+        actors[i].update();
 }
 function render() {
     //camera.lookAt( scene.position );

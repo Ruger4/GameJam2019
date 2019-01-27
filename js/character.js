@@ -1,8 +1,30 @@
 class Actor {
-    updateMeshes(keyframe) {
-        for(let meshName in keyframe) {
-            const mesh = keyframe[meshName];
-            debugger
+    constructor() {
+        this.meshArray = null;
+        this.currentAnimation = null;
+    }
+
+    update() {
+        this.updateMeshes();
+    }
+
+    updateMeshes() {
+        const keyframeUpdates = (this.currentAnimation && this.currentAnimation.keyframe());
+        if(keyframeUpdates) {
+            for(let meshName in keyframeUpdates) {
+                const update = keyframeUpdates[meshName];
+                const currentMesh = this.meshArray[meshName];
+    
+                if(!update || !currentMesh) {
+                    console.error("Missing mesh", { currentMesh, update })
+                    continue
+                }
+    
+                if(update.position)
+                    currentMesh.position.copy(update.position);
+                else
+                    console.log('update has no position', update)
+            }
         }
     }
 }
