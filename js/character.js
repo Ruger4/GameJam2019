@@ -9,7 +9,7 @@ class Actor {
     }
 
     updateMeshes() {
-        const keyframeUpdates = (this.currentAnimation && this.currentAnimation.keyframe());
+        const keyframeUpdates = (this.currentAnimation && this.currentAnimation.updates());
         if(keyframeUpdates) {
             for(let meshName in keyframeUpdates) {
                 const update = keyframeUpdates[meshName];

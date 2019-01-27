@@ -1,23 +1,24 @@
+const sequences = loadSequences()
+
 class AnimationSequence {
     constructor(){
         this.duration = 1000; // ms
         this.keyframes = [];
     }
 
-    keyframe(){
-        var phase = ((+new Date) % this.duration) / this.duration; // between 0-1
-        var i = Math.floor(phase*this.keyframes.length);
-        var j = Math.ceil(phase*this.keyframes.length);
+    updates(){
+        const numKeyframes = this.keyframes.length;
+        const phase = ((+new Date) % this.duration) / this.duration; // always between 0-1
 
-        if(j >= this.keyframes.length)
-            j = 0;
+        const i = Math.floor(phase*numKeyframes);
+        const j = Math.ceil(phase*numKeyframes);
 
-        // return an interpolated keyframe
-        var current = this.keyframes[i], next = this.keyframes[j];
+        const current = this.keyframes[i];
+        const next = this.keyframes[(j < this.keyframes.length) ? j : 0];
 
-        var interpolatedKeyframes = {};
+        const interpolatedKeyframes = {};
 
-        for(let meshName in current) {
+        for(const meshName in current) {
             const keyframe = current[meshName];
 
             interpolatedKeyframes[meshName] = {
@@ -47,6 +48,34 @@ class AnimationSequence {
             }	
         }
     }*/
+}
+
+function loadSequences() {
+    const sequences = ['kick'];
+    const parsed = {};
+
+    // synchronously fetches the sequence or animation json files and returns
+    // them parsed into an object e.g. {sequenceName: [keyFrame1, keyFrame2, ...], ...}
+    // make sure animations/*.json files match this [keyFrame1, keyFrame2] format 
+    sequences.forEach((sequenceName) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `/animations/${sequenceName}.json`, true);
+        xhr.onload = (e) => {
+            if(xhr.readyState === 4) {
+                if(xhr.status === 200) {
+                    parsed[sequenceName] = JSON.parse(xhr.responseText);
+                } else {
+                    console.error("can't load", sequenceName, xhr.statusText);
+                }
+            }
+        };
+        xhr.onerror = (e) => {
+            console.error(xhr.statusText);
+        };
+        xhr.send(null);
+    });
+
+    return parsed;
 }
 
 class Protagonist_Idle extends AnimationSequence{
