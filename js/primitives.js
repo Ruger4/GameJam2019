@@ -8,7 +8,7 @@ function makeSquare({ color, position, scale=unitScale, rotation=0 }) {
     var material = new THREE.MeshBasicMaterial( {color: new THREE.Color(color).addScalar(position.z*0.1), side: THREE.DoubleSide} );
 
     var plane = new THREE.Mesh( geometry, material );
-    plane.rotation.z = rotation*3.14159265359/180;
+    plane.rotation.z = rotation*Math.PI/180;
     plane.position.set(position.x, position.y, position.z)
     return plane
 }

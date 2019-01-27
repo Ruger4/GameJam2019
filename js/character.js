@@ -1,7 +1,7 @@
 class Actor {
     constructor() {
         this.meshArray = null;
-        this.currentAnimation = null;
+        this.animationSequence = null;
     }
 
     update() {
@@ -9,22 +9,26 @@ class Actor {
     }
 
     updateMeshes() {
-        const keyframeUpdates = (this.currentAnimation && this.currentAnimation.updates());
-        if(keyframeUpdates) {
-            for(let meshName in keyframeUpdates) {
-                const update = keyframeUpdates[meshName];
-                const currentMesh = this.meshArray[meshName];
+        const updates = (this.animationSequence && this.animationSequence.updates());
+
+        if(updates) {
+            for(let meshName in updates) {
+                const update = updates[meshName];
+                const mesh = this.meshArray[meshName];
     
-                if(!update || !currentMesh) {
-                    console.error("Missing mesh", { currentMesh, update })
+                if(!update || !mesh) {
+                    debugger
+                    console.error("Missing mesh", { mesh, update })
                     continue
                 }
+
+                // console.log('update position', mesh.position, update.position)
     
                 if(update.position)
-                    currentMesh.position.copy(update.position);
+                    mesh.position.copy(update.position);
 
                 if(update.rotation)
-                    currentMesh.rotation.copy(update.rotation);
+                    mesh.rotation.copy(update.rotation);
             }
         }
     }
@@ -51,7 +55,6 @@ class Protagonist extends Actor {
             "L_L_Leg":  makeSquare({position: new THREE.Vector3(0.794,-2.053,0),    rotation: -58.84,    scale: new THREE.Vector3(140.776,70.515,1), color: 0x19327D, alpha: 1}),
             "L_Foot":   makeSquare({position: new THREE.Vector3(1.231,-2.952,1),    rotation: -88.48,    scale: new THREE.Vector3(47.482,104.101,1), color: 0x19327D, alpha: 1})
         }
-
-        this.currentAnimation = new Protagonist_Idle();
+        this.animationSequence = sequences['kick'];
     }
 }
