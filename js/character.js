@@ -11,6 +11,12 @@ class Actor {
     updateMeshes() {
         const updates = (this.animationSequence && this.animationSequence.updates());
 
+        /*var updates
+        if(this.animationSequence)
+            updates = this.animationSequence.updates()
+        else
+            updates = null*/
+
         if(updates) {
             for(let meshName in updates) {
                 const update = updates[meshName];
@@ -22,13 +28,15 @@ class Actor {
                     continue
                 }
 
-                // console.log('update position', mesh.position, update.position)
-    
+                //console.log('update position', update)
+                
+                var x = update.type === "triangle" ? -30 : 0;
+
                 if(update.position)
                     mesh.position.copy(update.position);
 
                 if(update.rotation)
-                    mesh.rotation.copy(update.rotation);
+                    mesh.rotation.z = (update.rotation+x)*Math.PI/180;
             }
         }
     }
@@ -55,6 +63,6 @@ class Protagonist extends Actor {
             "L_L_Leg":  makeSquare({position: new THREE.Vector3(0.794,-2.053,0),    rotation: -58.84,    scale: new THREE.Vector3(140.776,70.515,1), color: 0x19327D, alpha: 1}),
             "L_Foot":   makeSquare({position: new THREE.Vector3(1.231,-2.952,1),    rotation: -88.48,    scale: new THREE.Vector3(47.482,104.101,1), color: 0x19327D, alpha: 1})
         }
-        this.animationSequence = sequences['kick'];
+        this.animationSequence = sequences['idle'];
     }
 }

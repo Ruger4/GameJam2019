@@ -15,36 +15,27 @@ class AnimationSequence {
         const current = this.keyframes[i];
         const next = this.keyframes[(j < this.keyframes.length) ? j : 0];
 
-        return current; // don't interpolate
+        //return current; // don't interpolate
 
         const updates = {};
 
         for(const meshName in current) {
             const keyframe = current[meshName];
 
+            var kfp = keyframe.position.clone();
+            var nmp = next[meshName].position.clone();
+            var kfs = keyframe.scale.clone();
+            var nms = next[meshName].scale.clone();
+
             updates[meshName] = {
-                position: keyframe.position.lerp(next[meshName].position, phase),
+                position: kfp.lerp(nmp, phase),
                 rotation: keyframe.rotation + (next[meshName].rotation - keyframe.rotation) * phase,
-                scale: keyframe.scale.lerp(next[meshName].scale, phase)
+                scale: kfs.lerp(nms, phase)
             }
         }
 
         return updates;
     }
-
-    /*void CSprite::Frame_Animate_Single	(bool a)
-    {	
-        int max = 8 - (int)(5.0f * m_s);
-        if((FCount++)%max == 0)
-        {
-            m_tv += m_th;
-            if(m_tv > (NFrames - 1) * m_th)
-            {
-                if(a) m_tv = 0;
-                else KILL = true;
-            }	
-        }
-    }*/
 }
 
 // synchronously fetches sequence or animation json files and returns
@@ -87,6 +78,10 @@ function parseSequence(name, jsonText) {
         return byMeshName;
     });
     return new AnimationSequence(name, keyframes);
+}
+
+function hackyDeepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
 }
 
 const sequences = loadSequences('idle', 'kick', 'punch');
