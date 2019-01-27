@@ -1,5 +1,5 @@
 [
-    [{"name": "Head", "type": "circle", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "Head", "type": "circle", "position": [], "rotation": 0, "scale": [0.5,0.5,0.5]}],
     [{"name": "U_Body", "type": "square", "position": [], "rotation": 0, "scale": []}],
     [{"name": "L_Body", "type": "square", "position": [], "rotation": 0, "scale": []}],
     [{"name": "Pelvis", "type": "triangle", "position": [], "rotation": 0, "scale": []}],
