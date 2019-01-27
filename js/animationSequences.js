@@ -16,23 +16,21 @@ class AnimationSequence {
         const current = this.keyframes[i];
         const next = this.keyframes[(j < this.keyframes.length) ? j : 0];
 
-        const interpolatedKeyframes = {};
+        // return current;
+
+        const interpolated = {};
 
         for(const meshName in current) {
             const keyframe = current[meshName];
 
-            interpolatedKeyframes[meshName] = {
+            interpolated[meshName] = {
                 position: keyframe.position.lerp(next[meshName].position, phase),
                 rotation: keyframe.rotation + (next[meshName].rotation - keyframe.rotation) * phase,
                 scale: keyframe.scale.lerp(next[meshName].scale, phase)
             }
         }
 
-        return interpolatedKeyframes;
-        
-        return {
-            position: current.position.lerp(next.position, phase),
-        }
+        return interpolated;
     }
 
     /*void CSprite::Frame_Animate_Single	(bool a)
