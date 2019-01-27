@@ -22,8 +22,9 @@ class Actor {
     
                 if(update.position)
                     currentMesh.position.copy(update.position);
-                else
-                    console.log('update has no position', update)
+
+                if(update.rotation)
+                    currentMesh.rotation.copy(update.rotation);
             }
         }
     }

@@ -19,13 +19,15 @@ class AnimationSequence {
 
         for(let meshName in current) {
             const keyframe = current[meshName];
+
             interpolatedKeyframes[meshName] = {
                 position: keyframe.position.lerp(next[meshName].position, phase),
+                rotation: keyframe.rotation + (next[meshName].rotation - keyframe.rotation) * phase,
+                scale: keyframe.scale.lerp(next[meshName].scale, phase)
             }
         }
 
         return interpolatedKeyframes;
-
         
         return {
             position: current.position.lerp(next.position, phase),
