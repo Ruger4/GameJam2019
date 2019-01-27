@@ -13,8 +13,8 @@
         [{"name": "U_R_Leg", "type": "square", "position": [-0.954,-0.73,-1], "rotation": -122.368, "scale": [146.224,73.243,1]}],
         [{"name": "L_R_Leg", "type": "square", "position": [-1.235,-1.98,-2], "rotation": -76.754, "scale": [140.776,70.515,1]}],
         [{"name": "R_Foot", "type": "square", "position": [-1.124,-2.949,-1], "rotation": -71.787, "scale": [47.482,104.101,1]}],
-        [{"name": "U_L_Leg", "type": "square", "position": [0.22,-0.796,1], "rotation": -75.159, "scale": [146.224,73.243,1]}],
-        [{"name": "L_L_Leg", "type": "square", "position": [0.794,-2.053,0], "rotation": -58.84, "scale": [140.776,70.515,1]}],
+        [{"name": "U_L_Leg", "type": "square", "position": [0.22,-0.796,1], "rotation": 126.677, "scale": [146.224,73.243,1]}],
+        [{"name": "L_L_Leg", "type": "square", "position": [0.794,-2.053,0], "rotation": 82.451, "scale": [140.776,70.515,1]}],
         [{"name": "L_Foot", "type": "square", "position": [1.231,-2.952,1], "rotation": -88.48, "scale": [47.482,104.101,1]}]
     ],
 
@@ -84,7 +84,7 @@
         [{"name": "L_R_Arm", "type": "square", "position": [0.414,1.534,2], "rotation": 47.178, "scale": [93.594,54.26,1]}],
         [{"name": "R_Hand", "type": "circle", "position": [0.896,2.052,2], "rotation": 0, "scale": [61.03,1,1]}],
         [{"name": "U_L_Arm", "type": "square", "position": [-0.476,1.745,-2], "rotation": -103.49, "scale": [111.139,60.056,1]}],
-        [{"name": "L_L_Arm", "type": "square", "position": [-0.069,1.059,1], "rotation": -2.874, "scale": [91.243,46.845,1]}],
+        [{"name": "L_L_Arm", "type": "square", "position": [-0.069,1.059,-1], "rotation": -2.874, "scale": [91.243,46.845,1]}],
         [{"name": "L_Hand", "type": "circle", "position": [0.652,1.007,-2], "rotation": 0, "scale": [61.03,1,1]}],
         [{"name": "U_R_Leg", "type": "square", "position": [-0.665,-0.688,-1], "rotation": -107.206, "scale": [134.503,74.499,1]}],
         [{"name": "L_R_Leg", "type": "square", "position": [-1.266,-1.97,-2], "rotation": -121.301, "scale": [138.98,68.958,1]}],

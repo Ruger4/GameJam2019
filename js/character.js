@@ -28,11 +28,7 @@ class Actor {
                     continue
                 }
 
-                //console.log('update position', update)
-                
-                var x = update.type === "triangle" ? -30 : 0;
-                console.log(update.type+" "+x)
-                
+                var x = meshName === "Pelvis" ? 30 : 0;          
 
                 if(update.position)
                     mesh.position.copy(update.position);

@@ -84,4 +84,4 @@ function hackyDeepClone(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
 
-const sequences = loadSequences('idle', 'kick', 'punch');
+const sequences = loadSequences('idle', 'kick', 'punch', 'walk');

@@ -1,0 +1,77 @@
+[
+    [
+        [{"name": "Head", "type": "circle", "position": [0.115,2.489,1], "rotation": 0, "scale": [0.5,0.5,0.5]}],
+        [{"name": "U_Body", "type": "square", "position": [-0.079,1.441,0], "rotation": -5.363, "scale": []}],
+        [{"name": "L_Body", "type": "square", "position": [-0.114,0.566,0], "rotation": 3.581, "scale": []}],
+        [{"name": "Pelvis", "type": "triangle", "position": [0.15,0.065,0], "rotation": 49.112, "scale": []}],
+        [{"name": "U_R_Arm", "type": "square", "position": [-0.736,1.154,2], "rotation": -96.95, "scale": []}],
+        [{"name": "L_R_Arm", "type": "square", "position": [-0.573,0.255,1], "rotation": -58.777, "scale": []}],
+        [{"name": "R_Hand", "type": "circle", "position": [-0.32,-0.251,2], "rotation": 0, "scale": []}],
+        [{"name": "U_L_Arm", "type": "square", "position": [0.332,1.205,-2], "rotation": -86.838, "scale": []}],
+        [{"name": "L_L_Arm", "type": "square", "position": [0.464,0.448,-2], "rotation": -67.318, "scale": []}],
+        [{"name": "L_Hand", "type": "circle", "position": [0.655,-0.009,-1], "rotation": 0, "scale": []}],
+        [{"name": "U_R_Leg", "type": "square", "position": [0.178,-0.53,1], "rotation": -51.686, "scale": []}],
+        [{"name": "L_R_Leg", "type": "square", "position": [0.373,-1.901,0], "rotation": -111.549, "scale": []}],
+        [{"name": "R_Foot", "type": "square", "position": [0.367,-2.928,1], "rotation": 86.353, "scale": []}],
+        [{"name": "U_L_Leg", "type": "square", "position": [-0.108,-0.826,-2], "rotation": 89.7, "scale": []}],
+        [{"name": "L_L_Leg", "type": "square", "position": [-0.377,-1.908,-1], "rotation": 68.293, "scale": []}],
+        [{"name": "L_Foot", "type": "square", "position": [-0.476,-2.828,-1], "rotation": -106.077, "scale": []}]
+    ],
+
+    [
+        [{"name": "Head", "type": "circle", "position": [0.369,2.4,1], "rotation": 0, "scale": [0.5,0.5,0.5]}],
+        [{"name": "U_Body", "type": "square", "position": [0.2,1.382,0], "rotation": -5.363, "scale": [150.325,102.129,1]}],
+        [{"name": "L_Body", "type": "square", "position": [0.243,0.525,0], "rotation": 3.841, "scale": [109.679,64.727,1]}],
+        [{"name": "Pelvis", "type": "triangle", "position": [0.524,0.073,0], "rotation": 41.42, "scale": [50.612,50.612,1]}],
+        [{"name": "U_R_Arm", "type": "square", "position": [-0.711,1.174,2], "rotation": -123.426, "scale": [100.627,0.33,1]}],
+        [{"name": "L_R_Arm", "type": "square", "position": [-0.866,0.326,1], "rotation": -83.802, "scale": [80.001,46.686,1]}],
+        [{"name": "R_Hand", "type": "circle", "position": [-0.718,-0.337,2], "rotation": 0, "scale": [61.03,1,1]}],
+        [{"name": "U_L_Arm", "type": "square", "position": [0.817,1.003,-2], "rotation": -88.887, "scale": [90.459,48.8,1]}],
+        [{"name": "L_L_Arm", "type": "square", "position": [0.963,0.215,-2], "rotation": -59.758, "scale": [69.852,46.845,1]}],
+        [{"name": "L_Hand", "type": "circle", "position": [1.232,-0.256,-1], "rotation": 0, "scale": [61.03,1,1]}],
+        [{"name": "U_R_Leg", "type": "square", "position": [0.454,-0.543,1], "rotation": -45.99, "scale": [164.883,65.612,1]}],
+        [{"name": "L_R_Leg", "type": "square", "position": [1.022,-1.875,0], "rotation": 90.998, "scale": [153.107,58.808,1]}],
+        [{"name": "R_Foot", "type": "square", "position": [1.251,-2.937,1], "rotation": 86.353, "scale": [47.566,100.135,1]}],
+        [{"name": "U_L_Leg", "type": "square", "position": [-0.059,-0.974,-2], "rotation": 89.7, "scale": [115,658,63.262,153.216]}],
+        [{"name": "L_L_Leg", "type": "square", "position": [-0.63,-1.948,-1], "rotation": 43.931, "scale": [121.402,59.295,1]}],
+        [{"name": "L_Foot", "type": "square", "position": [-1.063,-2.746,-1], "rotation": -126.96, "scale": [47.63,93.978,1]}]
+    ],
+
+    [
+        [{"name": "Head", "type": "circle", "position": [0.12,2.445,1], "rotation": 0, "scale": [0.5,0.5,0.5]}],
+        [{"name": "U_Body", "type": "square", "position": [0.031,1.459,0], "rotation": -1.702, "scale": [112.694,102.129,1]}],
+        [{"name": "L_Body", "type": "square", "position": [-0.046,0.587,0], "rotation": 3.841, "scale": [87.277,64.727,1]}],
+        [{"name": "Pelvis", "type": "triangle", "position": [0.14,0.105,-1], "rotation": 41.42, "scale": [50.612,50.612,1]}],
+        [{"name": "U_R_Arm", "type": "square", "position": [-0.399,1.298,2], "rotation": -91.429, "scale": [100.627,60.33,1]}],
+        [{"name": "L_R_Arm", "type": "square", "position": [-0.219,0.374,1], "rotation": -65.931, "scale": [77.642,46.686,1]}],
+        [{"name": "R_Hand", "type": "circle", "position": [0.12,-0.185,2], "rotation": 0, "scale": [61.03,1,1]}],
+        [{"name": "U_L_Arm", "type": "square", "position": [0.415,1.447,-2], "rotation": -88.887, "scale": [90.459,48.881,1]}],
+        [{"name": "L_L_Arm", "type": "square", "position": [0.434,0.62,-2], "rotation": -75.668, "scale": [69.852,46.85,1]}],
+        [{"name": "L_Hand", "type": "circle", "position": [0.438,0.184,-1], "rotation": 0, "scale": [61.03,1,1]}],
+        [{"name": "U_R_Leg", "type": "square", "position": [-0.266,-0.533,0], "rotation": -84.702, "scale": [158.37,63.262,1]}],
+        [{"name": "L_R_Leg", "type": "square", "position": [-0.422,-2.008,-1], "rotation": 62.886, "scale": [138.089,59.295,1]}],
+        [{"name": "R_Foot", "type": "square", "position": [-0.543,-2.946,-1], "rotation": -91.778, "scale": [47.63,93.978,70.822]}],
+        [{"name": "U_L_Leg", "type": "square", "position": [0.372,-0.653,1], "rotation": -66.985, "scale": [129.115,65.612,1]}],
+        [{"name": "L_L_Leg", "type": "square", "position": [0.451,-1.948,0], "rotation": 71.203, "scale": [53.107,58.808,1]}],
+        [{"name": "L_Foot", "type": "square", "position": [0.442,-2.857,1], "rotation": 58.217, "scale": [59.53,100.135,1]}]
+    ],
+
+    [
+        [{"name": "Head", "type": "circle", "position": [0.342,2.394,1], "rotation": 0, "scale": [0.5,0.5,0.5]}],
+        [{"name": "U_Body", "type": "square", "position": [0.124,1.368,0], "rotation": -8.699, "scale": [125.401,102.134,1]}],
+        [{"name": "L_Body", "type": "square", "position": [0.071,0.419,0], "rotation": 3.841, "scale": [105.01,77.878,1]}],
+        [{"name": "Pelvis", "type": "triangle", "position": [0.25,-0.167,0], "rotation": 49.112, "scale": [64.813,64.813,1]}],
+        [{"name": "U_R_Arm", "type": "square", "position": [0.145,0.986,2], "rotation": -91.429, "scale": [100.627,60.33,1]}],
+        [{"name": "L_R_Arm", "type": "square", "position": [0.524,0.206,1], "rotation": -35.385, "scale": [91.272,46.686,1]}],
+        [{"name": "R_Hand", "type": "circle", "position": [1.109,-0.217,2], "rotation": 0, "scale": [61.03,1,1]}],
+        [{"name": "U_L_Arm", "type": "square", "position": [-0.361,1.94,-2], "rotation": -121.683, "scale": [90.459,48.881,1]}],
+        [{"name": "L_L_Arm", "type": "square", "position": [-0.486,0.468,1], "rotation": -75.668, "scale": [9.852,48.845,1]}],
+        [{"name": "L_Hand", "type": "circle", "position": [-0.29,-0.056,-1], "rotation": 0, "scale": [61.03,1,1]}],
+        [{"name": "U_R_Leg", "type": "square", "position": [-0.137,-0.803,1], "rotation": -89.123, "scale": [131.627,63.262,1]}],
+        [{"name": "L_R_Leg", "type": "square", "position": [-0.565,-2.006,0], "rotation": 48.997, "scale": [123.725,53.127,1]}],
+        [{"name": "R_Foot", "type": "square", "position": [-0.957,-2.851,1], "rotation": -131.179, "scale": [47.63,93.978,1]}],
+        [{"name": "U_L_Leg", "type": "square", "position": [0.706,-0.747,-1], "rotation": -51.468, "scale": [123.157,62.585,1]}],
+        [{"name": "L_L_Leg", "type": "square", "position": [1.065,-1.908,-2], "rotation": -91.592, "scale": [128.178,58.808,1]}],
+        [{"name": "L_Foot", "type": "square", "position": [1.263,-2.905,1], "rotation": 82.228, "scale": [50.087,100.135,1]}]
+    ]
+]
