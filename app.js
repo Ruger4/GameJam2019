@@ -24,6 +24,20 @@ function init() {
     light.position.set( 1, 1, 1 ).normalize();
     scene.add( light );
 
+    /* IDLE RETRIEVAL REFACTORER
+    let prot = new Protagonist_Idle();
+    console.log(prot)
+    for(let key in prot.keyframe6){
+        var a = '[{"name": "' + key; 
+        var b = '", "type": "' + prot.keyframe6[key].type;
+        var c = '", "position": [' +prot.keyframe6[key].position.x+","+prot.keyframe6[key].position.y+","+prot.keyframe6[key].position.z;
+        var d = '], "rotation": ' + prot.keyframe6[key].rotation;
+        var e = ', "scale": [' + prot.keyframe6[key].scale.x+","+prot.keyframe6[key].position.y+","+prot.keyframe6[key].position.z;
+        var f = ']}],';
+
+        console.log(a+b+c+d+e+f)
+    }*/
+
     for(let i in actors) {
         const actor = actors[i];
         for(let key in actor.meshArray) {

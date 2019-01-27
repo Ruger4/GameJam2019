@@ -31,6 +31,8 @@ class Actor {
                 //console.log('update position', update)
                 
                 var x = update.type === "triangle" ? -30 : 0;
+                console.log(update.type+" "+x)
+                
 
                 if(update.position)
                     mesh.position.copy(update.position);

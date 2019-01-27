@@ -42,7 +42,7 @@ function makeTriangle({ color, position, scale=unitScale, rotation=0 }) {
 
     var material = new THREE.MeshBasicMaterial( {color: new THREE.Color(color).addScalar(position.z*0.1), side: THREE.DoubleSide} );
     var tri = new THREE.Mesh( geometry, material )
-    tri.rotation.z = (rotation+30)*3.14159265359/180;
+    tri.rotation.z = rotation*3.14159265359/180;
     tri.position.set(position.x, position.y, position.z);
     return tri
 }
