@@ -7,7 +7,29 @@ class AnimationSequence {
     keyframe(){
         var phase = ((+new Date) % this.duration) / this.duration; // between 0-1
         var i = Math.floor(phase*this.keyframes.length);
-        return this.keyframes[i];
+        var j = Math.ceil(phase*this.keyframes.length);
+
+        if(j >= this.keyframes.length)
+            j = 0;
+
+        // return an interpolated keyframe
+        var current = this.keyframes[i], next = this.keyframes[j];
+
+        var interpolatedKeyframes = {};
+
+        for(let meshName in current) {
+            const keyframe = current[meshName];
+            interpolatedKeyframes[meshName] = {
+                position: keyframe.position.lerp(next[meshName].position, phase),
+            }
+        }
+
+        return interpolatedKeyframes;
+
+        
+        return {
+            position: current.position.lerp(next.position, phase),
+        }
     }
 
     /*void CSprite::Frame_Animate_Single	(bool a)
