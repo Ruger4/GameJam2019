@@ -1,3 +1,18 @@
 [
-    [{"type": "circle", "position": [0.393, 2.442, 1], "rotation": 0, "scale": [148.373, 89.891, 1]}],
+    [{"name": "Head", "type": "circle", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "U_Body", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "L_Body", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "Pelvis", "type": "triangle", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "U_R_Arm", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "L_R_Arm", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "R_Hand", "type": "circle", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "U_L_Arm", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "L_L_Arm", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "L_Hand", "type": "circle", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "U_R_Leg", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "L_R_Leg", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "R_Foot", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "U_L_Leg", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "L_L_Leg", "type": "square", "position": [], "rotation": 0, "scale": []}],
+    [{"name": "L_Foot", "type": "square", "position": [], "rotation": 0, "scale": []}]
 ]
